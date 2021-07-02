@@ -37,7 +37,7 @@ Defined methods on Robinhood class
 import pandas as pd
 import numpy as np
 import yfinance as yf
-
+import sys
 
 #Methods Portfolio
 ####### Getting stock portfolio dataframe visulaization
@@ -67,14 +67,16 @@ def optionsPortfolioDataFrame(self):
     return x
 
 #Getting orders
-def pendingOrders(self):
-    orders = self.get_orders()
-    orders = pd.DataFrame(orders)
-    orders = orders.rename(columns={"type":"orderType","state":"orderState","id":"orderId"})
-    pending_orders = orders[orders.orderState =='confirmed'][['orderId','orderState','side','instrument','price','quantity', 'fees', 'orderType','last_transaction_at','executions']]
-    pending_orders = self.get_instrumentBasic(pending_orders['instrument'].tolist())[['market','name','symbol','instrumentType','url']].set_index('url').join(pending_orders.set_index('instrument')).reset_index(drop = True)
-    return pending_orders[['orderId',  'name','orderState','orderType','side', 'symbol','price', 'quantity', 'market',  'instrumentType','fees', 'last_transaction_at', 'executions']]
-
+def pendingOrders(self): 
+    orders = self.get_orders() 
+    orders = pd.DataFrame(orders) 
+    orders = orders.rename(columns={"type":"orderType","state":"orderState","id":"orderId"}) 
+    pending_orders = orders[orders.orderState =='confirmed'][['orderId','orderState','side','instrument','price','quantity', 'fees', 'orderType','last_transaction_at','executions']] 
+    if (not len(pending_orders)):
+        return False
+    else:
+        pending_orders = self.get_instrumentBasic(pending_orders['instrument'].tolist())[['market','name','symbol','instrumentType','url']].set_index('url').join(pending_orders.set_index('instrument')).reset_index(drop = True) 
+        return pending_orders[['orderId', 'name','orderState','orderType','side', 'symbol','price', 'quantity', 'market', 'instrumentType','fees', 'last_transaction_at', 'executions']]
 
 #stocks Order book method
 def ordersDataFrame(self):
@@ -176,3 +178,28 @@ def optionOrderDataFrame(self):
 
 def optionOrderJournal(df):
     pass
+
+
+def table_type(df_column):
+    # Note - this only works with Pandas >= 1.0.0
+
+    if sys.version_info < (3, 0):  # Pandas 1.0.0 does not support Python 2
+        return 'any'
+
+    if isinstance(df_column.dtype, pd.DatetimeTZDtype):
+        return 'datetime',
+    elif (isinstance(df_column.dtype, pd.StringDtype) or
+            isinstance(df_column.dtype, pd.BooleanDtype) or
+            isinstance(df_column.dtype, pd.CategoricalDtype) or
+            isinstance(df_column.dtype, pd.PeriodDtype)):
+        return 'text'
+    elif (isinstance(df_column.dtype, pd.SparseDtype) or
+            isinstance(df_column.dtype, pd.IntervalDtype) or
+            isinstance(df_column.dtype, pd.Int8Dtype) or
+            isinstance(df_column.dtype, pd.Int16Dtype) or
+            isinstance(df_column.dtype, pd.Int32Dtype) or
+            isinstance(df_column.dtype, pd.Int64Dtype)):
+        return 'numeric'
+    else:
+        return 'any'
+
