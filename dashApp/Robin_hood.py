@@ -128,7 +128,7 @@ def orderJournal(df): #Takes in  oerderBook dataframe to calculate gains, can al
             buystack = temp_buy[["quantity","price","timestamp"]].values.tolist()
             for j in temp_sell.itertuples():
                 avgPrice = {"qty":[],"price" : []}
-                item = {"timestamp":j.timestamp,"market":j.market,"stock":stock,"stockName":name,"fees":j.fees,"sellQty" : j.quantity,"sellPrice":j.price}
+                item = {"timestamp":j.timestamp,"market":j.market,"symbol":stock,"stockName":name,"fees":j.fees,"sellQty" : j.quantity,"sellPrice":j.price}
                 leftqty = j.quantity
                 
                 while leftqty >0:
@@ -187,7 +187,7 @@ def table_type(df_column):
         return 'any'
 
     if isinstance(df_column.dtype, pd.DatetimeTZDtype):
-        return 'datetime',
+        return 'datetime'
     elif (isinstance(df_column.dtype, pd.StringDtype) or
             isinstance(df_column.dtype, pd.BooleanDtype) or
             isinstance(df_column.dtype, pd.CategoricalDtype) or
@@ -198,8 +198,10 @@ def table_type(df_column):
             isinstance(df_column.dtype, pd.Int8Dtype) or
             isinstance(df_column.dtype, pd.Int16Dtype) or
             isinstance(df_column.dtype, pd.Int32Dtype) or
-            isinstance(df_column.dtype, pd.Int64Dtype)):
+            isinstance(df_column.dtype, pd.Int64Dtype) or
+            (df_column.dtype == np.float_)):
         return 'numeric'
     else:
         return 'any'
+
 
