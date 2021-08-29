@@ -350,6 +350,6 @@ if __name__ == '__main__':
     print()
     print(rh.logout())
     print("All of the dataframe needed for Plotly DASH App are stored in .csv format in given ./dashApp/data directory")
-    print("*_"*100)
+    print("*_"*100) 
     
     
