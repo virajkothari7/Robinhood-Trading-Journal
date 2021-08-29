@@ -65,7 +65,7 @@ class Robinhood:
 ###############################################################################################################
 
     def mfa_login(self, data_load,attempt = 3):
-        data_load["mfa_code"] = str(input("Input mfa code: \n"))
+        data_load["mfa_code"] = str(input("Input mfa code: "))
         response= self.session.post(self.endpoints['login'],data=data_load) 
         attempt -= 1
         if (response.status_code != requests.codes.ok) and (attempt > 0):
@@ -82,7 +82,7 @@ class Robinhood:
     def challenge_login(self, data_load,res,attempt = 3):
         challenge_url = ("https://api.robinhood.com/"f"challenge/{res['challenge']['id']}/respond/")
         challenge_load = {
-            'response':str(input("Enter RH challenge code sent to you. Challenge Type: SMS \n"))}
+            'response':str(input("Enter RH challenge code sent to you. Challenge Type: SMS : "))}
         challenge_header = {"X-ROBINHOOD-CHALLENGE-RESPONSE-ID": str(res['challenge']['id'])}
         response= self.session.post(
             challenge_url,
@@ -109,8 +109,8 @@ class Robinhood:
         self.device_token: str = ("device_token", str(uuid.uuid4())) 
         while True:
             data_load = {
-                    'username' : username if (username and attempts == 3) else str(input("Please Enter User Email Id : \n")),
-                    'password' : password if (password and attempts == 3) else getpass("Plese Enter Password : \n"), #str(input("Plese Enter Password : \n")),
+                    'username' : username if (username and attempts == 3) else str(input("Please Enter User Email Id : ")),
+                    'password' : password if (password and attempts == 3) else getpass("Plese Enter Password : "), #str(input("Plese Enter Password : \n")),
                     'grant_type': 'password',
                     'scope' : 'internal',
                     'client_id': self.client_id,
@@ -423,7 +423,7 @@ class Robinhood:
                 returnlist = options["results"]
             return [ i for i in returnlist if (float(i['average_price'])*float(i['quantity'])) != 0 ]
         except Exception as e:
-            print("Error occured at postions_owned method, %s" %e)
+            print("Error occured at options_owned method, %s" %e)
             return False
 
 

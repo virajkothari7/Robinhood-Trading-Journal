@@ -1,0 +1,25 @@
+Written Instruction On Running Scripts
+
+1] Open Robinhood-trading-journal folder in Finder or File Explorer
+
+
+2] Open Terminal or Command Prompt
+
+
+3] Type in cd and select dashapp folder from Finder or File Explorer and drag it to terminal next to cd, it should look like, cd \user\....\dashapp then press enter
+
+
+4] Run scripts in terminal by typing,
+
+4.1] python3 Robin_hood.py
+As it runs follow instructions of script, type in email-password to login. This is needed to get data and update data.
+	
+Once above script is finished then type
+
+4.2] python3 index.py
+It should give a local address, copy and got chrome or safari and paste that link. Plotly-Dashboard is ready, you can directly run this script if you already have data from last time and don't need to update. Dashboard will show data of data stored in data folder. 
+	
+
+5] To close dashboard, select terminal and press ctrl+c or ctrl+d. It will stop local server and dash app. 
+
+

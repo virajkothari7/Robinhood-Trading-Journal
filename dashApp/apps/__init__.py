@@ -3,6 +3,6 @@
 """
 Created on Tue Jun 29 19:12:01 2021
 
-@author: viraj
+@author: Robinhood-trading-journal
 """
 
