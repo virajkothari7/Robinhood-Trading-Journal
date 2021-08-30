@@ -2,7 +2,7 @@
 
 This project is python scripts, which uses mainly [Robinhood](https://robinhood.com)'s 
 private API and [Dash feature from Plotly](https://plotly.com/dash/open-source/) for 
-creating visualized trading journal. 
+creating visualized trading journal. You can varify and download to use it as personal trading journal for Robinhood. 
 
 Inspired and based on python projects, [Josh Fraser's robinhood-to-csv](https://github.com/joshfraser/robinhood-to-csv/), and [Rohan Pai & Adithya Balaji's Robinhood Unofficial](https://github.com/robinhood-unofficial/pyrh).
 
@@ -13,9 +13,9 @@ the person can actually know how much profit/loss is made in one week, month or 
 
 Most useful case scenerio is paying one's quarterly estimated tax based on your estimated calculated gain using this. 
 Where as day trader or swing trader can analyze their trading habits using visulized trading journal, run the script on day's end to know net profit of the day. 
+<br><br>
 
-
-# Python scripts are in python3.
+> **Note: Python scripts are in python3.**
 
 The defalts endpoints to access robinhood api is in [Robinhood_Base.py](https://github.com/virajkothari7/Robinhood-trading-journal/blob/main/Robinhood_Base.py), 
 one of the convienince I made in my script for login is that it is MFA app compatiable login, which means you can use your google code auth or duo to add MFA code to login. 
@@ -28,31 +28,77 @@ However, wash sale calculation are not accounted. Also options calculation were 
 Each Layout file in apps in dashApp is each webpage layout python scripts, it consits dash bootstrap, container, and html components as well as callback methods of regarding each webpage are in same corresponding python script. For further understanding look [dash documentation](https://dash.plotly.com/)
 
 
-# Getting github repo to local machine and installing dependency to run this app
+## Installing github repo to local machine and dependency to run this app
 
 You can manually download zip file from here, click on Code and select Download Zip
 
-> **_Requirements:_**  python 3+ [Install Python](https://www.python.org/downloads/), Git [Install Git](https://git-scm.com/downloads).
+> **_Requirements:_**  python 3+ [Install Python](https://www.python.org/downloads/)<br> **_Optional:_** Git [Install Git](https://git-scm.com/downloads). If zip downloaded then directly go to step 3 and 4
 
-"""
+~~~
 Cloning this repo:
 Change directory to desired location!!!
 
->>>> cd Documents
->>>> git clone https://github.com/virajkothari7/Robinhood-trading-journal.git
->>>> cd Robinhood-trading-journal
->>>> pip3 instrall -r requirements.txt
+>> cd Documents
+>> git clone https://github.com/virajkothari7/Robinhood-trading-journal.git
+>> cd Robinhood-trading-journal
+>> pip3 instrall -r requirements.txt
 
-"""
+~~~
 
-#Getting Started
+## Getting Started 
+For detailed instruction look Instruction.txt
+~~~
+Getting data from Robinhood and have visualize it on local server using a web browser!!
 
-"""
+>> cd [PATH]/Robinhood-trading-journal/dashApp
+>> python3 Robin_hood.py  #To get data from Robinhood
+>> python3 index.py  #Will open a local server, for best view results, try using google chrome, safari or edge
 
-"""
+~~~
+
+## Final View
 
 
-#Final View
 
 
-#Credits
+
+# Credits/Acknowledgement
+
+Project: [pyrh - Unofficial Robinhood API](https://github.com/robinhood-unofficial) <br>
+Copyright (c) 2020 Unofficial Robinhood Python API Developers <br>
+License (MIT) https://github.com/robinhood-unofficial/pyrh/blob/master/LICENSE 
+<br>
+
+Project: [Robinhood to CSV](https://github.com/joshfraser/robinhood-to-csv) <br>
+Copyright (c) 2015 Josh Fraser <br>
+Copyright (c) 2015 Rohan Pai <br>
+License (MIT) https://github.com/joshfraser/robinhood-to-csv/blob/master/LICENSE 
+<br>
+
+Project: [Plotly-Dash](https://github.com/plotly/dash) <br>
+Copyright (c) 2021 Plotly, Inc <br>
+License (MIT) https://github.com/plotly/dash/blob/dev/LICENSE <br>
+Documentation : https://dash.plotly.com/ 
+<br>
+
+Author: Charming Data <br>
+Github Repo: [Coding-with-Adam/Dash-by-Plotly](https://github.com/Coding-with-Adam/Dash-by-Plotly)<br>
+Youtube Link: https://www.youtube.com/channel/UCqBFsuAz41sqWcFjZkqmJqQ 
+<br>
+
+Author: Gil Yehuda (Credits for using Credits template) <br>
+Quora Link: https://www.quora.com/How-do-I-properly-credit-an-original-codes-developer-for-her-open-source-contribution <br>
+
+Community Credits: Python Community, Stack Exchange Community, Plolty Community, Web-Developers Community
+#### Technologies
+- plotly==5.1.0
+- dash==1.21.0
+- dash_table==4.12.0
+- dash_core_components==1.17.1
+- dash_html_components==1.1.4
+- dash_bootstrap_components==0.12.2
+- numpy==1.20.3
+- pandas==1.3.0
+- requests==2.25.1
+- yfinance==0.1.63
+- datetime
