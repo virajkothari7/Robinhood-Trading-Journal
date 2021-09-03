@@ -11,12 +11,12 @@ Written Instruction On Running Scripts
 
 4] Run scripts in terminal by typing,
 
-4.1] python3 Robin_hood.py
+4.1] python Robin_hood.py
 As it runs follow instructions of script, type in email-password to login. This is needed to get data and update data.
 	
 Once above script is finished then type
 
-4.2] python3 index.py
+4.2] python index.py
 It should give a local address, copy and got chrome or safari and paste that link. Plotly-Dashboard is ready, you can directly run this script if you already have data from last time and don't need to update. Dashboard will show data of data stored in data folder. 
 	
 
