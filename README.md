@@ -41,7 +41,7 @@ Change directory to desired location!!!
 >> cd Documents
 >> git clone https://github.com/virajkothari7/Robinhood-trading-journal.git
 >> cd Robinhood-trading-journal
->> pip3 instrall -r requirements.txt
+>> pip install -r requirements.txt
 
 ~~~
 
@@ -51,8 +51,8 @@ For detailed instruction look Instruction.txt
 Getting data from Robinhood and have visualize it on local server using a web browser!!
 
 >> cd [PATH]/Robinhood-trading-journal/dashApp
->> python3 Robin_hood.py  #To get data from Robinhood
->> python3 index.py  #Will open a local server, for best view results, try using google chrome, safari or edge
+>> python Robin_hood.py  #To get data from Robinhood
+>> python index.py  #Will open a local server, for best view results, try using google chrome, safari or edge
 
 ~~~
 
