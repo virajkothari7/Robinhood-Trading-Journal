@@ -15,7 +15,8 @@ Most useful case scenerio is paying one's quarterly estimated tax based on your 
 Where as day trader or swing trader can analyze their trading habits using visulized trading journal, run the script on day's end to know net profit of the day. 
 <br><br>
 
-> **Note: Python scripts are in python3.**
+> **Note: Python scripts are in python3.** 
+<br>
 
 The defalts endpoints to access robinhood api is in [Robinhood_Base.py](https://github.com/virajkothari7/Robinhood-trading-journal/blob/main/Robinhood_Base.py), 
 one of the convienince I made in my script for login is that it is MFA app compatiable login, which means you can use your google code auth or duo to add MFA code to login. 
@@ -26,6 +27,7 @@ Benefit of this script is that it accounts of stocks splits while calculating fo
 However, wash sale calculation are not accounted. Also options calculation were quite complicated so at moment it only accounts for bought and sold or expired. If there is covered sell meaning that you sold option contract based on stocks owned, and option excersiced will be not be accounted hence those entities are not included in calculations.
 
 Each Layout file in apps in dashApp is each webpage layout python scripts, it consits dash bootstrap, container, and html components as well as callback methods of regarding each webpage are in same corresponding python script. For further understanding look [dash documentation](https://dash.plotly.com/)
+<br>
 
 
 ## Installing github repo to local machine and dependency to run this app
@@ -45,6 +47,7 @@ Change directory to desired location!!!
 
 ~~~
 
+
 ## Getting Started 
 For detailed instruction look Instruction.txt
 ~~~
@@ -56,12 +59,40 @@ Getting data from Robinhood and have visualize it on local server using a web br
 
 ~~~
 
+
 ## Final View
 
+After getting data by running "Robin_hood.py" script, and running "index.py" to have local server running dash app.
+Below is screen shots of final app, also stored in snapshots folder.
+<br><br>
+<table>
+  <tr>
+    <td><img src=https://github.com/virajkothari7/Robinhood-trading-journal/blob/main/snapshots/snapshot_1.gif></td>
+    <td><img src=https://github.com/virajkothari7/Robinhood-trading-journal/blob/main/snapshots/snapshot_3.gif></td>
+  </tr>
+  <tr>
+    <td><img src=https://github.com/virajkothari7/Robinhood-trading-journal/blob/main/snapshots/snapshot_2.gif></td>
+    <td><img src=https://github.com/virajkothari7/Robinhood-trading-journal/blob/main/snapshots/snapshot_5.gif></td>
+  </tr>
+</table>
+<br> 
 
 
+## Technologies
+- plotly==5.1.0
+- dash==1.21.0
+- dash_table==4.12.0
+- dash_core_components==1.17.1
+- dash_html_components==1.1.4
+- dash_bootstrap_components==0.12.2
+- numpy==1.20.3
+- pandas==1.3.0
+- requests==2.25.1
+- yfinance==0.1.63
+- datetime
+<br>
 
-
+  
 # Credits/Acknowledgement
 
 Project: [pyrh - Unofficial Robinhood API](https://github.com/robinhood-unofficial) <br>
@@ -90,15 +121,10 @@ Author: Gil Yehuda (Credits for using Credits template) <br>
 Quora Link: https://www.quora.com/How-do-I-properly-credit-an-original-codes-developer-for-her-open-source-contribution <br>
 
 Community Credits: Python Community, Stack Exchange Community, Plolty Community, Web-Developers Community
-#### Technologies
-- plotly==5.1.0
-- dash==1.21.0
-- dash_table==4.12.0
-- dash_core_components==1.17.1
-- dash_html_components==1.1.4
-- dash_bootstrap_components==0.12.2
-- numpy==1.20.3
-- pandas==1.3.0
-- requests==2.25.1
-- yfinance==0.1.63
-- datetime
+
+<br>
+
+# License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/virajkothari7/Robinhood-trading-journal/blob/main/LICENSE)
+
+This project is licensed under MIT. You are responsible for using robinhood's private api and all depending third-party libraries by running the scripts, look robinhood's and respective python libraries terms of use.
+
