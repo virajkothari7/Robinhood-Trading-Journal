@@ -117,7 +117,7 @@ Github Repo: [Coding-with-Adam/Dash-by-Plotly](https://github.com/Coding-with-Ad
 Youtube Link: https://www.youtube.com/channel/UCqBFsuAz41sqWcFjZkqmJqQ 
 <br>
 
-Author: Gil Yehuda (Credits for using Credits template) <br>
+Author: Gil Yehuda (credit for Credits Template) <br>
 Quora Link: https://www.quora.com/How-do-I-properly-credit-an-original-codes-developer-for-her-open-source-contribution <br>
 
 Community Credits: Python Community, Stack Exchange Community, Plolty Community, Web-Developers Community
