@@ -23,10 +23,10 @@ one of the convienince I made in my script for login is that it is MFA app compa
 Although I haven't worked on more methods since that are not useful in regards to this project, but you can give it a try. 
 
 The [Robin_hood.py](https://github.com/virajkothari7/Robinhood-trading-journal/blob/main/Robin_hood.py) scripts have methods on accessing order history for stocks and options, (will try to work on crypto later), current portfolio and dataframe of order history. 
-Benefit of this script is that it accounts of stocks splits while calculating for profit/loss, if security was bought before split and sold after split. Although calculation are based of FIFO basis as per [Robinhood's default cost basis](https://robinhood.com/us/en/support/articles/cost-basis/). 
-However, wash sale calculation are not accounted. Also options calculation were quite complicated so at moment it only accounts for bought and sold or expired. If there is covered sell meaning that you sold option contract based on stocks owned, and option excersiced will be not be accounted hence those entities are not included in calculations.
+Benefit of this script is that it accounts of stocks splits while calculating for profit/loss, if security was bought before split and sold after split. Although calculation are based on FIFO basis as per [Robinhood's default cost basis](https://robinhood.com/us/en/support/articles/cost-basis/). 
+However, wash sale calculation are not accounted. Also options calculation were quite complicated so at moment it only accounts for bought and sold or expired. If there is covered sell meaning that you sold option contract based on stocks owned, and option excersiced are not accounted. Hence those entities  are not included in calculations.
 
-Each Layout file in apps in dashApp is each webpage layout python scripts, it consits dash bootstrap, container, and html components as well as callback methods of regarding each webpage are in same corresponding python script. For further understanding look [dash documentation](https://dash.plotly.com/)
+Each Layout file in dashApp/app folder is each webpage layout's python scripts, it consists dash bootstrap, container, and html components as well as callback methods regarding each webpage are in same corresponding python script. For further understanding look [dash documentation](https://dash.plotly.com/)
 <br>
 
 
