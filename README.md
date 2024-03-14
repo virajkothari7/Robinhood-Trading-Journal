@@ -1,4 +1,4 @@
-# Robinhood-trading-journal
+# Robinhood-Trading-Journal
 
 This project is python scripts, which uses mainly [Robinhood](https://robinhood.com)'s 
 private API and [Dash feature from Plotly](https://plotly.com/dash/open-source/) for 
